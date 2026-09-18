@@ -6,6 +6,10 @@
     Title="Pokédex móvil"
     BackgroundColor="#F4F7FA">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Vehículos" Clicked="OnVehiclesClicked" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="16">
 

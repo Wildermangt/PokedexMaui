@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PokedexMaui.VehiclesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:PokedexMaui.Models"
+    Title="Fabricantes de vehículos"
+    BackgroundColor="#F4F7FA">
+
+    <Grid RowDefinitions="Auto,Auto,Auto,*" Padding="24" RowSpacing="12">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="4">
+            <Label Text="Fabricantes de vehículos"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#17365D" />
+            <Label x:Name="SummaryLabel"
+                   Text="API vPIC de la NHTSA — GetAllMakes"
+                   FontSize="14"
+                   TextColor="#52616B" />
+        </VerticalStackLayout>
+
+        <Entry x:Name="FilterEntry"
+               Grid.Row="1"
+               Placeholder="Filtrar por nombre: por ejemplo TESLA"
+               TextChanged="OnFilterTextChanged" />
+
+        <ActivityIndicator x:Name="LoadingIndicator"
+                           Grid.Row="2"
+                           IsVisible="False"
+                           IsRunning="False"
+                           Color="#2F75B5" />
+
+        <Label x:Name="MessageLabel"
+               Grid.Row="2"
+               IsVisible="False"
+               TextColor="#B42318" />
+
+        <CollectionView x:Name="MakesCollection"
+                        Grid.Row="3">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:VehicleMake">
+                    <Border BackgroundColor="White"
+                            Stroke="#D5DEE8"
+                            StrokeThickness="1"
+                            Padding="14,10"
+                            Margin="0,0,0,8">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="12" />
+                        </Border.StrokeShape>
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14">
+                            <Label Grid.Column="0"
+                                   Text="{Binding MakeId}"
+                                   FontAttributes="Bold"
+                                   TextColor="#2F75B5"
+                                   VerticalTextAlignment="Center"
+                                   WidthRequest="70" />
+                            <Label Grid.Column="1"
+                                   Text="{Binding MakeName}"
+                                   TextColor="#17365D"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

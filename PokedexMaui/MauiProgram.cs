@@ -26,6 +26,16 @@ public static class MauiProgram
         builder.Services.AddSingleton<PokeApiService>();
         builder.Services.AddTransient<MainPage>();
 
+        // Parte 13. El reto de vehiculos usa otra API, por lo que necesita su
+        // propio HttpClient con una direccion base distinta.
+        builder.Services.AddSingleton(_ => new VehicleApiService(new HttpClient
+        {
+            BaseAddress = new Uri("https://vpic.nhtsa.dot.gov/api/vehicles/"),
+            Timeout = TimeSpan.FromSeconds(30)
+        }));
+
+        builder.Services.AddTransient<VehiclesPage>();
+
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

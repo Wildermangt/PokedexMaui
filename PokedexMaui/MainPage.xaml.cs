@@ -63,6 +63,14 @@ public partial class MainPage : ContentPage
         }
     }
 
+    // Parte 13. Abre la pantalla del reto resolviendola desde el contenedor
+    // de dependencias, para que reciba su VehicleApiService.
+    private async void OnVehiclesClicked(object? sender, EventArgs e)
+    {
+        IServiceProvider services = IPlatformApplication.Current!.Services;
+        await Navigation.PushAsync(services.GetRequiredService<VehiclesPage>());
+    }
+
     private void ShowPokemon(PokemonResponse pokemon)
     {
         TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
