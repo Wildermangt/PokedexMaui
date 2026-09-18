@@ -7,6 +7,10 @@
     Title="Fabricantes de vehículos"
     BackgroundColor="#F4F7FA">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Pokédex" Clicked="OnPokedexClicked" />
+    </ContentPage.ToolbarItems>
+
     <Grid RowDefinitions="Auto,Auto,Auto,*" Padding="24" RowSpacing="12">
 
         <VerticalStackLayout Grid.Row="0" Spacing="4">

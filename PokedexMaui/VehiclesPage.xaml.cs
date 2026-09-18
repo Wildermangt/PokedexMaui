@@ -27,6 +27,11 @@ public partial class VehiclesPage : ContentPage
         await LoadMakesAsync();
     }
 
+    // Regresa a la Pokedex. Como VehiclesPage se abrio con PushAsync sobre la
+    // NavigationPage, basta con sacarla de la pila: MainPage conserva su estado.
+    private async void OnPokedexClicked(object? sender, EventArgs e)
+        => await Navigation.PopAsync();
+
     private async Task LoadMakesAsync()
     {
         _loadCts?.Cancel();
