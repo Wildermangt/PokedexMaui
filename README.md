@@ -127,7 +127,9 @@ Los cinco casos se ejecutaron sobre la aplicación en Windows Machine. **5 de 5 
 - [PokeAPI v2](https://pokeapi.co/docs/v2) — datos de Pokémon
 - [vPIC — NHTSA Vehicle API](https://vpic.nhtsa.dot.gov/api/) — fabricantes de vehículos
 
-## Autor
+## Autores
 
 **Jeferson Wilderman González Tenjo**
+**María Alejandra Gómez**
+
 Tecnología en Desarrollo de Software — VI semestre
