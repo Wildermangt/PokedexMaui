@@ -1,0 +1,10 @@
+# Compilados de .NET
+[Bb]in/
+[Oo]bj/
+# Visual Studio
+.vs/
+*.user
+*.suo
+# Publicación
+[Pp]ublish/
+*.binlog
